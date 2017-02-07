@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
+from django.utils import timezone
 import datetime
 
 class Member(models.Model):
@@ -12,7 +13,6 @@ class Member(models.Model):
     
     def __str__(self):
         return self.name
-        
 
 class Projects(models.Model):
     name = models.CharField(max_length=150)
@@ -43,3 +43,33 @@ class Semester(models.Model):
     
     class Meta:
         ordering = ('-year',)
+        
+class Events(models.Model):
+    TYPE_CHOICES = (
+        ('field_trip','Field Trip'),
+        ('presentation', 'Presentation'),
+        ('workshop', 'Workshop'),    
+    )
+    LEVEL_CHOICES = (
+        ('beginner', 'Beginner'),
+        ('intermediate', 'Intermediate'),
+        ('advanced', 'Advanced')
+    )
+    
+    name = models.CharField(max_length=70)
+    type = models.CharField(max_length=14,
+                            choices=TYPE_CHOICES,
+                            default='presentation')
+    description = models.TextField()
+    date = models.DateTimeField(default=timezone.now)
+    location = models.CharField(max_length=300)
+    presenters = models.CharField(max_length=150)
+    level = models.CharField(max_length=14,
+                             choices=LEVEL_CHOICES,
+                             default='beginner')
+    target_audience = models.CharField(max_length=300)
+    
+    def __str__(self):
+        return self.name
+    
+    
