@@ -1,13 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.conf import settings
 from django.utils import timezone
 import datetime
 
 class Member(models.Model):
-    #user = models.OneToOneField(settings.AUTH_USER_MODEL)
-    #with User class username is a required field...
-    
+    picture = models.ImageField(blank=True)
     name = models.CharField(max_length=120)
     role = models.TextField()
     
@@ -71,5 +68,3 @@ class Events(models.Model):
     
     def __str__(self):
         return self.name
-    
-    
