@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>Index</head>
+<body>
+{% for semester in semesters %}
+    <h1>{{ semester.year }}</h1>
+{% endfor %}
+
+{% for mem in members %}
+    {% if mem.picture %}
+        <img src="{{ mem.picture.url }}">
+    {% endif %}
+{% endfor %}
+</body>
+</html>
