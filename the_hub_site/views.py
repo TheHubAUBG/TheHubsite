@@ -10,3 +10,4 @@ def index(request):
     context = {'events': events, 'members': members, 'projects': projects, 'semesters': semesters}
     return render(request, 'the_hub_site/index.html', context)
 
+
