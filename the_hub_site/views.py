@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Events, Member, Projects, Semester
 # Create your views here.
 
+
 def index(request):
     events = Events.objects.all()
     members = Member.objects.all()
