@@ -1,7 +1,33 @@
+@font-face {
+    font-family: Fenton-l;
+    src: url(../fonts/Fenton/Fenton-Thin.otf);
+}
+@font-face {
+    font-family: Fenton-r;
+    src: url(../fonts/Fenton/Fenton-Light.otf);
+}
+@font-face {
+    font-family: Fenton-b;
+    src: url(../fonts/Fenton/Fenton-Regular.otf);
+}
+.section-heading{
+    font-size: 40px;
+    font-family: "Fenton-b";
+    letter-spacing: 6px;
+    padding: 20px 0 30px;
+    text-align: center;
+}
+.section-subheading {
+    font-size: 25px;
+    font-family: "Fenton-r";
+    text-align: center;
+}
 .now{
     background: #eee;
 }
-
+.team .col-xs-6{
+    padding-bottom:20px;
+}
 .avatar-box{
     position: relative;
     border-radius: 50%;
@@ -15,11 +41,65 @@
 .info{
     padding: 0;
     text-align: center;
+    font-family: "Fenton-r";
+    letter-spacing: 3px;
+    font-size: 22px;
 }
 .info span:nth-of-type(1){
     padding: 10px 0;
     display: block;
 }
-#team{
+.team .row{
     overflow: hidden;
+}
+.team{
+    position: relative;
+}
+.prev, .next{
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+    position: absolute;
+    width: 70px;
+    z-index: 1;
+}
+.prev{
+    right: -20px;
+}
+.next{
+    left: -20px;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(60,60,60,0.4);
+}
+.arrow {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    position: absolute;
+    top: 49%;
+    width: 40px;
+    height: 40px;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    transform: rotate(45deg);
+    left:0;
+    cursor: pointer;
+}
+.next .arrow {
+    transform: rotate(-135deg);
+    left:20px;
+}
+.next .arrow:hover {
+    left:15px;
+}
+.prev .arrow:hover {
+    left:5px;
+}
+.team{
+    position: absolute;
 }
