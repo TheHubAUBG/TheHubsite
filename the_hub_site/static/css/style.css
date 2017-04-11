@@ -1,0 +1,25 @@
+.now{
+    background: #eee;
+}
+
+.avatar-box{
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+}
+.avatar-box img{
+    width: 100%;
+    overflow: hidden;
+}
+.info{
+    padding: 0;
+    text-align: center;
+}
+.info span:nth-of-type(1){
+    padding: 10px 0;
+    display: block;
+}
+#team{
+    overflow: hidden;
+}
